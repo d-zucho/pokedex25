@@ -3,19 +3,38 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* font family: Roboto */
+  --font-mono: 'Roboto', sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* colors */
+  --my-light-gray: #f5f7fb;
+  --my-dark-gray: #212121;
+  --my-blue: #c9d2ea;
+  --my-dark-blue: #416edf;
+  --my-yellow: #ffce31;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mono);
+}
+
+@layer components {
+  .search-bar {
+    @apply bg-white shadow-lg text-my-dark-blue px-4 py-5 placeholder-my-dark-blue focus:placeholder-opacity-40;
+  }
+
+  .checkbox {
+    @apply checked:bg-my-blue;
+  }
+
+  /* text styles */
+  .text-body {
+    @apply text-black font-medium text-base;
+  }
+
+  .text-body-lg {
+    @apply text-black font-bold text-xl;
+  }
 }
